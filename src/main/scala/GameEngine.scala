@@ -12,4 +12,3 @@ object GameEngine {
     println(player1)
   }
 }
-
