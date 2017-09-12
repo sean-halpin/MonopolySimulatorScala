@@ -1,14 +1,9 @@
+import scala.util.Random
 object GameEngine {
   def main(args: Array[String]) {
     println("Begin")
-
-    val player1 = new Player(1,200)
-    println(player1.id)
-    println(player1.balance)
-    println(player1)
-    player1.adjustBalance(25)
-    println(player1)
-    player1.adjustPosition(12)
-    println(player1)
+    val _players = (1 to 4).map( id => new Player( id, 0, 200, new Dice(new Random))).toList
+    val _gameBoard = new GameBoard(_players)
+    _gameBoard.RunSimulation()
   }
 }
